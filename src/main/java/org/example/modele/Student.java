@@ -6,9 +6,9 @@ public class Student {
     private static String last_name;
     private static String speciality;
     private static String email;
-    private  static  String password;
+    private static  String password;
     private static String annesScolaire;
-    private  static  int presence;
+    private static  int presence;
     private static  int absence;
     private static String role;
     //Constructor
