@@ -16,10 +16,13 @@ public class DBconnection {
     public static Connection getMyConnexion() throws ClassNotFoundException,
             SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-
-        connection = DriverManager.getConnection(url, user, password);
-
-        return connection;
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+            return connection;
+        }catch (Exception e){
+            System.out.println("erorr at cnx database");
+        }
+        return  null;
     }
 
 
