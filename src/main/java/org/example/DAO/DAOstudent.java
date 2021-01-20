@@ -9,12 +9,13 @@ import java.util.List;
 public interface DAOstudent {
     public List<Student> getAll() throws ClassNotFoundException, SQLException;
 
-    public Student getById(Long id) throws ClassNotFoundException, SQLException;
+    public String getBySpeciality(String speciality) throws ClassNotFoundException, SQLException;
 
+    public Long getById(Long id) throws ClassNotFoundException, SQLException;
     public Student ajoutStudent(String nom, String prenom) throws ClassNotFoundException, SQLException;
 
     public int updateStudent(Long id, String nom, String prenom) throws ClassNotFoundException, SQLException;
 
-    public int deleteById(Long id);
+    public int deleteById(Long id) throws SQLException, ClassNotFoundException;
 
 }
