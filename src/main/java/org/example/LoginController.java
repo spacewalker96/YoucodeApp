@@ -2,6 +2,7 @@ package org.example;
 
 
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
@@ -12,6 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
+
+import java.io.IOException;
+import javafx.fxml.FXML;
 
 
 public class LoginController {
@@ -26,7 +30,7 @@ public class LoginController {
     private Button submitButton;
 
     @FXML
-    public void login(ActionEvent event) throws SQLException {
+    public void login(ActionEvent event) throws SQLException, IOException {
 
         Window owner = submitButton.getScene().getWindow();
 
@@ -52,8 +56,11 @@ public class LoginController {
 
         if (!flag) {
             infoBox("Please enter correct Email and Password", null, "Failed");
-        } else {
-            infoBox("Login Successful!", null, "Failed");
+        } else if (flag=true){
+            //infoBox("Login Successful!", null, "Failed");
+            App.setRoot("interfaceAdmin");
+
+
         }
     }
 

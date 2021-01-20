@@ -1,12 +1,13 @@
 package org.example.DAOAdmin;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 public interface DAO<T> {
     Optional<T> get(long id);
 
-    List<T> getAll();
+    List<T> getAll() throws SQLException, ClassNotFoundException;
 
     void save(T t);
 
