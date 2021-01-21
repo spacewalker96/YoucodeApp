@@ -43,13 +43,19 @@ public  class DAOstudentImpl  implements DAOstudent {
         statement = Connexion.getMyConnexion().createStatement();
       String query ="SELECT * FROM student WHERE  Student_specialite = ?";
       ResultSet rs =statement.executeQuery(query);
-      return null;
+      return rs;
     }
 
     @Override
-    public ResultSet getById(Long id) throws ClassNotFoundException, SQLException {
+    public ResultSet getCurrentUser() throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
-        String query ="SELECT * FROM student";
+        String query ="SELECT student.student_firstname,student.student_lastname," +
+                "student.student_annescolaire,specialite.specialite_name," +
+                "concat(formateur.formateur_firstname,'  ',formateur.formateur_lastname) AS formateur_firstname " +
+                "FROM student " +
+                "JOIN specialite ON student.id_specialite = specialite.specialite_id " +
+                "join formateur on student.id_specialite = formateur.formateur_specialite";
+
         ResultSet rs =statement.executeQuery(query);
         return rs;
     }

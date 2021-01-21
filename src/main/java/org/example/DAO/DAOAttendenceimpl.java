@@ -15,11 +15,11 @@ public class DAOAttendenceimpl implements DAOAttendence{
     Statement statement = null;
     DBconnection Connexion;
     @Override
-    public List<Attendence> getAllAttendence() throws ClassNotFoundException, SQLException {
-        List<Attendence> attendences = new ArrayList<Attendence>();
+    public List<Attendence> getAllAttendenceForStudent() throws ClassNotFoundException, SQLException {
+        List<Attendence> attendence = new ArrayList<Attendence>();
         statement = Connexion.getMyConnexion().createStatement();
         ResultSet rs;
-        String query = "Select * From absence";
+        String query = "Select * From absence ";
         rs = statement.executeQuery(query);
         while(rs.next()){
             Long id = rs.getLong("absence_id");
@@ -28,7 +28,7 @@ public class DAOAttendenceimpl implements DAOAttendence{
             String id_student = rs.getString("id_student");
             String id_secretaire = rs.getString("id-secretaire");
         }
-        return attendences;
+        return attendence;
     }
 
     @Override
@@ -40,11 +40,14 @@ public class DAOAttendenceimpl implements DAOAttendence{
     }
 
     @Override
-    public Long getByIdAttendence(Long id_Attendence) throws ClassNotFoundException, SQLException {
+    public ResultSet getAttendenceForCRT_USR() throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
-        String query ="SELECT * FROM absence WHERE  absence_id = ?";
+        String query ="SELECT absence.absence_justifier,absence.absence_non_justifier," +
+                "(student.student_absence /student.student_presence)*10 AS taux " +
+                "FROM absence " +
+                "join student on absence.id_student=student.student_id";
         ResultSet rs =statement.executeQuery(query);
-        return null;
+        return rs;
     }
 
     @Override

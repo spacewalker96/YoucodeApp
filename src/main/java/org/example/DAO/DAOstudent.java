@@ -11,7 +11,7 @@ public interface DAOstudent {
 
     public ResultSet getBySpeciality(String speciality) throws ClassNotFoundException, SQLException;
 
-    public ResultSet getById(Long id) throws ClassNotFoundException, SQLException;
+    public ResultSet getCurrentUser() throws ClassNotFoundException, SQLException;
     public Student ajoutStudent(String nom, String prenom) throws ClassNotFoundException, SQLException;
     public int updateStudent(Long id, String nom, String prenom) throws ClassNotFoundException, SQLException;
     public int deleteById(Long id) throws SQLException, ClassNotFoundException;
