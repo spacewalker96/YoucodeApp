@@ -43,7 +43,7 @@ public  class DAOstudentImpl  implements DAOstudent {
         statement = Connexion.getMyConnexion().createStatement();
       String query ="SELECT * FROM student WHERE  Student_specialite = ?";
       ResultSet rs =statement.executeQuery(query);
-      return rs;
+      return null;
     }
 
     @Override
