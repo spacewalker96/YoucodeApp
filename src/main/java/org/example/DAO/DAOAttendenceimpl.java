@@ -1,5 +1,6 @@
 package org.example.DAO;
 
+/*
 import org.example.modele.Attendence;
 import org.example.modele.Student;
 import org.example.utilities.DBconnection;
@@ -58,3 +59,4 @@ public class DAOAttendenceimpl implements DAOAttendence{
         return null;
     }
 }
+*/

@@ -1,10 +1,7 @@
 package org.example.DAO;
-
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import org.example.modele.Student;
 import org.example.utilities.DBconnection;
@@ -15,7 +12,7 @@ public  class DAOstudentImpl  implements DAOstudent {
     private DBconnection Connexion;
 
     @Override
-    public List<Student> getAll() throws ClassNotFoundException, SQLException {
+    public ResultSet getAll() throws ClassNotFoundException, SQLException {
 
         List<Student> students = new ArrayList<Student>();
 
@@ -32,18 +29,19 @@ public  class DAOstudentImpl  implements DAOstudent {
             String specialite = rs.getString("student_specialite");
             String anneScolaire = rs.getString("student_annescolaire");
             String role = rs.getString("student_role");
+
             Student student = new Student(id, nom, prenom,email,password,specialite,anneScolaire,role);
             students.add(student);
         }
-        return  students;
+        return (ResultSet) students;
     }
 
-    @Override
+  /*  @Override
     public ResultSet  getBySpeciality(String speciality) throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
-      String query ="SELECT * FROM student WHERE  Student_specialite = ?";
-      ResultSet rs =statement.executeQuery(query);
-      return rs;
+        String query ="SELECT * FROM student WHERE  Student_specialite = ?";
+        ResultSet rs =statement.executeQuery(query);
+        return null;
     }
 
     @Override
@@ -77,6 +75,6 @@ public  class DAOstudentImpl  implements DAOstudent {
         ResultSet rs =statement.executeQuery(query);
         return 0;
     }
-
+*/
 
 }
