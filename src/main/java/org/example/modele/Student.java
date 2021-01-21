@@ -6,9 +6,9 @@ public class Student {
     private static String last_name;
     private static String speciality;
     private static String email;
-    private  static  String password;
+    private static  String password;
     private static String annesScolaire;
-    private  static  int presence;
+    private static  int presence;
     private static  int absence;
     private static String role;
     //Constructor
@@ -23,6 +23,14 @@ public class Student {
         this.speciality=speciality;
         this.annesScolaire=annesScolaire;
         this.role=role;
+    }
+    public Student(String first_name,String last_name,String speciality,String annesScolaire){
+
+        this.first_name=first_name;
+        this.last_name=last_name;
+
+        this.speciality=speciality;
+        this.annesScolaire=annesScolaire;
     }
 
     //Getters && Setters
