@@ -15,7 +15,11 @@ public class DBconnection {
     // Connexion à la base de données
     public static Connection getMyConnexion() throws ClassNotFoundException,
             SQLException {
+<<<<<<< Updated upstream
       //  Class.forName("com.mysql.jdbc.Driver");
+=======
+        //Class.forName("com.mysql.jdbc.Driver");
+>>>>>>> Stashed changes
         try {
             connection = DriverManager.getConnection(url, user, password);
             return connection;

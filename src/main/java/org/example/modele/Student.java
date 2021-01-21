@@ -24,6 +24,14 @@ public class Student {
         this.annesScolaire=annesScolaire;
         this.role=role;
     }
+    public Student(String first_name,String last_name,String speciality,String annesScolaire){
+
+        this.first_name=first_name;
+        this.last_name=last_name;
+
+        this.speciality=speciality;
+        this.annesScolaire=annesScolaire;
+    }
 
     //Getters && Setters
     public static Long getId() {
