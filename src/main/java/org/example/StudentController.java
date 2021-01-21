@@ -54,7 +54,7 @@ public class StudentController implements Initializable {
                 labelNom.setText(rs.getString("student_firstname"));
                 labelPrenom.setText(rs.getString("student_lastname"));
                 labelPromo.setText(rs.getString("student_anneScolaire"));
-                labelSpecialite.setText(rs.getString("student_specialite"));
+                labelSpecialite.setText(rs.getString("id_specialite"));
 
             }
         } catch (ClassNotFoundException e) {
