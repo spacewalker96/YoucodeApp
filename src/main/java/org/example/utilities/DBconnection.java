@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import  java.sql.Statement;
 
 public class DBconnection {
-    String PILOTE = "com.mysql.jdbc.Driver";
+    //String PILOTE = "com.mysql.jdbc.Driver";
     static String user = "root";
     static String password = "";
     static String url = "jdbc:mysql://localhost:3306/gestion-app-absence";
@@ -15,7 +15,7 @@ public class DBconnection {
     // Connexion à la base de données
     public static Connection getMyConnexion() throws ClassNotFoundException,
             SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
+      //  Class.forName("com.mysql.jdbc.Driver");
         try {
             connection = DriverManager.getConnection(url, user, password);
             return connection;

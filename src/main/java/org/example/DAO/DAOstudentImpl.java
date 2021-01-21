@@ -41,17 +41,17 @@ public  class DAOstudentImpl  implements DAOstudent {
     @Override
     public String  getBySpeciality(String speciality) throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
-      String query ="SELECT * FROM students WHERE  Student_specialite = ?";
+      String query ="SELECT * FROM student WHERE  Student_specialite = ?";
       ResultSet rs =statement.executeQuery(query);
       return null;
     }
 
     @Override
-    public Long getById(Long id) throws ClassNotFoundException, SQLException {
+    public ResultSet getById(Long id) throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
-        String query ="SELECT * FROM students WHERE  Student_id = ?";
+        String query ="SELECT * FROM student";
         ResultSet rs =statement.executeQuery(query);
-        return null;
+        return rs;
     }
 
     @Override
