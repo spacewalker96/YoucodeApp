@@ -26,7 +26,7 @@ public  class DAOstudentImpl  implements DAOstudent {
         rs = statement.executeQuery(query);
 
         while (rs.next()) {
-            Long id = rs.getLong("student_id");
+            int id = rs.getInt("student_id");
             String nom = rs.getString("student_firstname");
             String prenom = rs.getString("student_lastname");
             String email = rs.getString("student_email");

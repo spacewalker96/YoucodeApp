@@ -1,7 +1,5 @@
 package org.example.DAOAdmin;
 
-public class FormateurDao {
-
-
+public interface DaoStudent {
     
 }

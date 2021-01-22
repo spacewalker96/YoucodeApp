@@ -1,7 +1,7 @@
 package org.example.modele;
 
 public class Formateur {
-    private static Long id;
+    private static int id;
     private static String formateur_firstname;
     private static String formateur_lastname;
     private static String formateur_speciality;
@@ -10,17 +10,23 @@ public class Formateur {
     private static String role_id;
 
 ////////////////constructor/////
+
     public Formateur() {
+    }
+
+    public Formateur(int formateur_id, String formateur_firstname, String formateur_lastname, String formateur_email) {
 
     }
 
     /////////////getter/////////
 
-    public static Long getId() {
+    public static int getId() {
+
         return id;
     }
 
     public static String getFormateur_firstname() {
+
         return formateur_firstname;
     }
 

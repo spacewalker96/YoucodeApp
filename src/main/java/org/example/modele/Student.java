@@ -1,7 +1,7 @@
 package org.example.modele;
 
 public class Student {
-    private static Long id;
+    private static int id;
     private static String first_name;
     private static String last_name;
     private static String speciality;
@@ -11,10 +11,16 @@ public class Student {
     private  static  int presence;
     private static  int absence;
     private static String role;
+
     //Constructor
     public Student() {
+
     }
-    public Student(Long id,String first_name,String last_name,String email,String password,String speciality,String annesScolaire,String role){
+    //Constructor
+    public Student(int colId, String colFirtsName, String colLastName, String colEmail) {
+
+    }
+    public Student(int id,String first_name,String last_name,String email,String password,String speciality,String annesScolaire,String role){
         this.id=id;
         this.first_name=first_name;
         this.last_name=last_name;
@@ -26,23 +32,27 @@ public class Student {
     }
 
     //Getters && Setters
-    public static Long getId() {
+    public static int getId() {
         return id;
     }
 
-    public static void setId(Long id) {
+    public static void setId(int id) {
+
         Student.id = id;
     }
 
     public static String getFirst_name() {
+
         return first_name;
     }
 
     public static void setFirst_name(String first_name) {
+
         Student.first_name = first_name;
     }
 
     public static String getLast_name() {
+
         return last_name;
     }
 
