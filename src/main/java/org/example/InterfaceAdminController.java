@@ -13,6 +13,7 @@ import org.example.modele.Formateur;
 import org.example.modele.Student;
 import org.example.DAOAdmin.StudentDao;
 
+
 import java.sql.SQLException;
 
 public class InterfaceAdminController {
@@ -243,16 +244,57 @@ public class InterfaceAdminController {
       DAO daoformateur = new DaoFormateur();
 
       try {
-        daoformateur.update(tfFirstName.getText(), tfLastName.getText(), tfEmail.getText(), Integer.parseInt(tfID.getText()));
+        daoformateur.update(tfFirstNameFormateur.getText(), tfLastNameFormateur.getText(), tfEmailFormateur.getText(), Integer.parseInt(tfIDFormateur.getText()));
 
-      } catch (Exception e) {
+      } catch (NumberFormatException e) {
         e.printStackTrace();
       }
-
 
     });
 
   }
+
+  @FXML
+  public void DeleteFormateur() throws SQLException, ClassCastException{
+    btnDeleteFormateur.setOnAction(e1->{
+
+
+
+      Formateur formateur = new Formateur();
+      DAO daoformateur = new DaoFormateur();
+
+
+              try {
+                daoformateur.delete(Integer.parseInt(tfIDFormateur.getText()));
+
+
+              } catch (NumberFormatException e) {
+                e.printStackTrace();
+              }
+            }
+
+    );
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

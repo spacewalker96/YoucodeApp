@@ -156,7 +156,7 @@
                                     <font>
                                         <Font size="20.0" />
                                     </font></Button>
-                                <Button fx:id="btnDeleteFormateur" layoutX="108.0" layoutY="435.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0"  text="Delete">
+                                <Button fx:id="btnDeleteFormateur" layoutX="108.0" layoutY="435.0" mnemonicParsing="false" prefHeight="44.0" onAction="#DeleteFormateur" prefWidth="132.0"  text="Delete">
                                     <font>
                                         <Font size="20.0" />
                                     </font></Button>

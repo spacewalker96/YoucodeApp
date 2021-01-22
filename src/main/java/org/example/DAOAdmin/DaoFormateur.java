@@ -87,8 +87,6 @@ public class DaoFormateur implements DAO<Formateur>{
             PreparedStatement preparedStatement = conn.prepareStatement("UPDATE formateur SET formateur_firstname = ?, formateur_lastname = ?,formateur_email = ? WHERE formateur_id= ?");
 
 
-
-            //preparedStatement.setInt(1,student.getId());
             preparedStatement.setString(1,nom);
             preparedStatement.setString(2,prenom);
             preparedStatement.setString(3,mail);
@@ -110,6 +108,26 @@ public class DaoFormateur implements DAO<Formateur>{
 
     @Override
     public void delete(int id) {
+
+        try {
+
+            Connection conn = getMyConnexion();
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM formateur WHERE formateur_id= ?");
+
+
+
+            preparedStatement.setInt(1,id);
+
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            conn.close();
+
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 }

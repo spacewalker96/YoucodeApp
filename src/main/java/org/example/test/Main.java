@@ -13,7 +13,7 @@ public class Main {
         Formateur formateur = new Formateur();
         DAO daoformateur = new DaoFormateur();
 
-        daoformateur.update("my","my","dfd@fd",2);
+        daoformateur.delete(2);
         //daoStudent.delete(1);
         System.out.println("bien save !");
     }
