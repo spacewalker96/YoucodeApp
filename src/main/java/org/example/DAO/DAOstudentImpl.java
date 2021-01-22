@@ -41,7 +41,7 @@ public  class DAOstudentImpl  implements DAOstudent {
     @Override
     public ResultSet  getBySpeciality(String speciality) throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
-      String query ="SELECT * FROM student WHERE  Student_specialite = ?";
+      String query ="SELECT * FROM student JOIN specialite ON student.id_specialite=specialite.specialite_id ";
       ResultSet rs =statement.executeQuery(query);
       return rs;
     }
