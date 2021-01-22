@@ -43,7 +43,7 @@ public class DAOAttendenceimpl implements DAOAttendence{
     public ResultSet getAttendenceForCRT_USR() throws ClassNotFoundException, SQLException {
         statement = Connexion.getMyConnexion().createStatement();
         String query ="SELECT absence.absence_justifier,absence.absence_non_justifier," +
-                "(student.student_absence /student.student_presence)*10 AS taux " +
+                "(student.student_absence /student.student_presence)*100 AS taux " +
                 "FROM absence " +
                 "join student on absence.id_student=student.student_id";
         ResultSet rs =statement.executeQuery(query);
