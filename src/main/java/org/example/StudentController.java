@@ -30,13 +30,12 @@ public class StudentController implements Initializable {
     @FXML
     private Label labelFormateur;
     @FXML
-    private TableView<Student> tableAbsence;
+    private Label absence_Just;
     @FXML
-    private TableColumn<Attendence, Integer> colAbs_Just;
+    private Label absence_non_Just;
     @FXML
-    private TableColumn<Attendence, Integer> colAbs_non_just;
-    @FXML
-    private TableColumn<Student, Integer> colTaux;
+    private Label taux;
+
 
 
     @Override
@@ -51,6 +50,7 @@ public class StudentController implements Initializable {
         try {
             ResultSet rs ;
             rs=implStudent.getCurrentUser();
+
             System.out.println(rs);
             if(rs.next()){
                 labelNom.setText(rs.getString("student_firstname"));
@@ -58,29 +58,25 @@ public class StudentController implements Initializable {
                 labelPromo.setText(rs.getString("student_annescolaire"));
                 labelSpecialite.setText(rs.getString("specialite_name"));
                 labelFormateur.setText(rs.getString("formateur_firstname"));
-
-
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+
         DAOAttendenceimpl k =new DAOAttendenceimpl();
         ResultSet rs;
 
         try {
             rs =k.getAttendenceForCRT_USR();
+            Attendence cur;
             if(rs.next()){
-                //colAbs_Just.setText(rs.getString("absence_justifier"));
-                //colAbs_non_just.setText(rs.getString("absence_non_justifier"));
-                //colTaux.setText(rs.getString("taux"));
+                absence_Just.setText(rs.getString("absence_justifier"));
+                absence_non_Just.setText(rs.getString("absence_non_justifier"));
+                taux.setText(rs.getString("taux"));
 
-                Attendence cur =new Attendence(rs.getInt("absence_justifier"),rs.getInt("absence_non_justifier"));
-
-                colAbs_Just.setCellValueFactory(new PropertyValueFactory<Attendence,Integer>("absence_justifier"));
-                colAbs_non_just.setCellValueFactory(new PropertyValueFactory<Attendence,Integer>("absence_non_justifier"));
-                colTaux.setCellValueFactory(new PropertyValueFactory<Student,Integer>("taux"));
             }else{
                 System.out.println("Nothing to show");
             }
