@@ -22,7 +22,7 @@
                         <TableColumn fx:id="colFirtsName" prefWidth="116.79998779296875" text="first Name" />
                         <TableColumn fx:id="colLastName" prefWidth="149.60003662109375" text="last Name" />
                         <TableColumn fx:id="colEmail" prefWidth="169.5999755859375" text="Email" />
-                  <TableColumn fx:id="colEmail1" prefWidth="169.5999755859375" text="Specialite" />
+                  <TableColumn fx:id="colSpecialite" prefWidth="169.5999755859375" text="Specialite" />
 
                     </columns>
                <columnResizePolicy>

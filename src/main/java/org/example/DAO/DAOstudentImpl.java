@@ -3,6 +3,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.example.modele.Student;
 import org.example.utilities.DBconnection;
 
@@ -12,9 +15,9 @@ public  class DAOstudentImpl  implements DAOstudent {
     private DBconnection Connexion;
 
     @Override
-    public ResultSet getAll() throws ClassNotFoundException, SQLException {
+    public ObservableList<Student> getAll() throws ClassNotFoundException, SQLException {
 
-        List<Student> students = new ArrayList<Student>();
+        ObservableList<Student> students = FXCollections.observableArrayList();
 
         statement = Connexion.getMyConnexion().createStatement();
         ResultSet rs;
@@ -33,7 +36,18 @@ public  class DAOstudentImpl  implements DAOstudent {
             Student student = new Student(id, nom, prenom,email,password,specialite,anneScolaire,role);
             students.add(student);
         }
-        return (ResultSet) students;
+        return students;
+    }
+
+    public ResultSet  getBySpeciality(String speciality) throws ClassNotFoundException, SQLException {
+        statement = Connexion.getMyConnexion().createStatement();
+        String query ="SELECT * FROM student JOIN specialite ON student.id_specialite=specialite.specialite_id ";
+        ResultSet rs =statement.executeQuery(query);
+        if (rs.next()) {
+            System.out.println(rs.getString("student_firstname"));
+
+        }
+        return rs;
     }
 
   /*  @Override

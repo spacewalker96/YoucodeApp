@@ -1,5 +1,6 @@
 package org.example.DAO;
 
+import javafx.collections.ObservableList;
 import org.example.modele.Student;
 
 import java.sql.ResultSet;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public interface DAOstudent {
 
-    ResultSet getAll() throws SQLException, ClassNotFoundException;
+    ObservableList<Student> getAll() throws SQLException, ClassNotFoundException;
  /*   public List<Student> getAll() throws ClassNotFoundException, SQLException;
 
     public String getBySpeciality(String speciality) throws ClassNotFoundException, SQLException;
