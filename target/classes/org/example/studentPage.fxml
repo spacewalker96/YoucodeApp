@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.StudentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.StudentController">
    <children>
-      <HBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="769.0" style="-fx-background-color: cyan;">
+      <HBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="770.0" style="-fx-background-color: cyan;">
          <children>
             <Label alignment="CENTER" prefHeight="83.0" prefWidth="174.0" text="LOGO">
                <padding>
@@ -143,13 +145,44 @@
       </HBox>
       <VBox layoutX="269.0" layoutY="112.0" prefHeight="299.0" prefWidth="514.0">
          <children>
-            <TableView fx:id="tableAbsence" prefHeight="299.0" prefWidth="514.0">
-              <columns>
-                <TableColumn fx:id="colAbs_Just" prefWidth="164.99996948242188" text="Absence Justifier" />
-                  <TableColumn fx:id="colAbs_non_just" prefWidth="179.800048828125" text="Absence non Justifier" />
-                  <TableColumn fx:id="colTaux" prefWidth="169.0" text="Taux Absence" />
-              </columns>
-            </TableView>
+            <HBox prefHeight="158.0" prefWidth="399.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="158.0" prefWidth="143.0" style="-fx-border-color: black;" text="Absence justifier">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="158.0" prefWidth="191.0" style="-fx-border-color: black;" text="Absence non justifier">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="141.0" layoutY="10.0" prefHeight="158.0" prefWidth="200.0" style="-fx-border-color: black;" text="taux d'absentéisme">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="158.0" prefWidth="399.0">
+               <children>
+                  <Label fx:id="absence_Just" alignment="CENTER" prefHeight="158.0" prefWidth="143.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="absence_non_Just" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="158.0" prefWidth="191.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="taux" alignment="CENTER" layoutX="141.0" layoutY="10.0" prefHeight="158.0" prefWidth="200.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>
