@@ -51,7 +51,6 @@ public class StudentController implements Initializable {
             ResultSet rs ;
             rs=implStudent.getCurrentUser();
 
-            System.out.println(rs);
             if(rs.next()){
                 labelNom.setText(rs.getString("student_firstname"));
                 labelPrenom.setText(rs.getString("student_lastname"));
@@ -66,12 +65,12 @@ public class StudentController implements Initializable {
         }
 
 
-        DAOAttendenceimpl k =new DAOAttendenceimpl();
+       DAOAttendenceimpl k =new DAOAttendenceimpl();
         ResultSet rs;
 
         try {
             rs =k.getAttendenceForCRT_USR();
-            Attendence cur;
+
             if(rs.next()){
                 absence_Just.setText(rs.getString("absence_justifier"));
                 absence_non_Just.setText(rs.getString("absence_non_justifier"));
@@ -86,4 +85,5 @@ public class StudentController implements Initializable {
             throwables.printStackTrace();
         }
     }
+
 }
