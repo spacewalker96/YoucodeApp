@@ -16,4 +16,16 @@ public interface DAOstudent {
     public int updateStudent(Long id, String nom, String prenom) throws ClassNotFoundException, SQLException;
     public int deleteById(Long id) throws SQLException, ClassNotFoundException;
 
+/*
+    Optional<T> get(long id);
+
+    List<T> getAll() throws SQLException, ClassNotFoundException;
+
+    void save(T t);
+
+    void update(T t, String[]params);
+
+    void delete(T t);
+*/
+
 }

@@ -55,6 +55,7 @@ public  class DAOstudentImpl  implements DAOstudent {
                 "FROM student " +
                 "JOIN specialite ON student.id_specialite = specialite.specialite_id " +
                 "join formateur on student.id_specialite = formateur.formateur_specialite";
+                //"WHERE student_id='" + id +"'";
 
         ResultSet rs =statement.executeQuery(query);
         return rs;
