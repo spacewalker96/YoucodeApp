@@ -2,7 +2,7 @@ package org.example.DAOAdmin;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.example.modele.Formateur;
+import org.example.modele.Secretaire;
 
 import java.sql.*;
 import java.util.List;
@@ -10,53 +10,48 @@ import java.util.Optional;
 
 import static org.example.utilities.DBconnection.getMyConnexion;
 
-public class DaoFormateur implements DAO<Formateur>{
-
+public class DaoSecretaire  implements DAO<Secretaire>{
     @Override
-    public Optional<Formateur> get(long id) {
+    public Optional<Secretaire> get(long id) {
         return Optional.empty();
     }
 
     @Override
-    public List<Formateur> getAll() throws SQLException, ClassNotFoundException {
+    public List<Secretaire> getAll() throws SQLException, ClassNotFoundException {
 
-
-        ObservableList<Formateur> formateurlist = FXCollections.observableArrayList();
+        ObservableList<Secretaire> secretaireslist = FXCollections.observableArrayList();
         Connection connection = getMyConnexion();
-        String query = "SELECT * FROM formateur";
+        String query = "SELECT * FROM sectretaire";
         Statement statement;
         ResultSet rs;
 
         try{
             statement = connection.createStatement();
             rs = statement.executeQuery(query);
-            Formateur formateur;
+            Secretaire secretaire;
             while(rs.next()){
 
-                formateur = new Formateur(rs.getInt("formateur_id"),
-                        rs.getString("formateur_firstname"),
-                        rs.getString("formateur_lastname"),
-                        rs.getString("formateur_email"));
-                formateurlist.add(formateur);
+                secretaire = new Secretaire(rs.getInt("sectretaire_id"),
+                        rs.getString("secretaire_firstname"),
+                        rs.getString("secretaire_lastname"),
+                        rs.getString("secretaire_email"));
+                secretaireslist.add(secretaire);
             }
 
         }catch(Exception ex){
             ex.printStackTrace();
         }
-        return formateurlist;    }
+        return secretaireslist;
 
-
+    }
 
     @Override
     public void save(String nom, String prenom, String mail) throws SQLException, ClassNotFoundException {
 
-
         try {
-
             Connection conn = getMyConnexion();
-            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO formateur(formateur_firstname, formateur_lastname, formateur_email) VALUES (?,?,?)");
+            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO sectretaire(secretaire_firstname, secretaire_lastname, secretaire_email) VALUES (?,?,?)");
 
-            //preparedStatement.setInt(1,student.getId());
             preparedStatement.setString(1,nom);
             preparedStatement.setString(2,prenom);
             preparedStatement.setString(3,mail);
@@ -72,18 +67,15 @@ public class DaoFormateur implements DAO<Formateur>{
             e.printStackTrace();
         }
 
+
     }
-
-
 
     @Override
     public void update(String nom, String prenom, String mail, int id) {
-
-
         try {
 
             Connection conn = getMyConnexion();
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE formateur SET formateur_firstname = ?, formateur_lastname = ?,formateur_email = ? WHERE formateur_id= ?");
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE sectretaire SET secretaire_firstname = ?, secretaire_lastname = ?,secretaire_email = ? WHERE sectretaire_id= ?");
 
 
             preparedStatement.setString(1,nom);
@@ -102,7 +94,6 @@ public class DaoFormateur implements DAO<Formateur>{
             e.printStackTrace();
         }
 
-
     }
 
     @Override
@@ -111,7 +102,7 @@ public class DaoFormateur implements DAO<Formateur>{
         try {
 
             Connection conn = getMyConnexion();
-            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM formateur WHERE formateur_id= ?");
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM sectretaire WHERE sectretaire_id= ?");
 
 
 
@@ -129,4 +120,6 @@ public class DaoFormateur implements DAO<Formateur>{
         }
 
     }
+
+
 }

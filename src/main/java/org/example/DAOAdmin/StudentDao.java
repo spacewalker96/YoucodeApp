@@ -59,7 +59,6 @@ public class StudentDao implements DAO<Student> {
             Connection conn = getMyConnexion();
             PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO student(student_firstname, student_lastname, student_email) VALUES (?,?,?)");
 
-            //preparedStatement.setInt(1,student.getId());
             preparedStatement.setString(1,nom);
             preparedStatement.setString(2,prenom);
             preparedStatement.setString(3,mail);
@@ -109,12 +108,6 @@ public class StudentDao implements DAO<Student> {
 
     }
 
-
-
-
-
-
-
     @Override
     public void delete(int id) {
         try {
@@ -122,12 +115,6 @@ public class StudentDao implements DAO<Student> {
             Connection conn = getMyConnexion();
             PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM student WHERE student_id= ?");
 
-
-
-            //preparedStatement.setInt(1,student.getId());
-            //preparedStatement.setString(1,nom);
-           // preparedStatement.setString(2,prenom);
-           // preparedStatement.setString(3,mail);
             preparedStatement.setInt(1,id);
 
             preparedStatement.executeUpdate();
@@ -142,23 +129,6 @@ public class StudentDao implements DAO<Student> {
         }
     }
 
-
-
-
-
-
-    //Exuctions des Requetes
-  /*  private void executeQuery(String query) throws SQLException, ClassNotFoundException {
-        Connection conn = getMyConnexion();
-        Statement st;
-        try{
-            st = conn.createStatement();
-            st.executeUpdate(query);
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-
-    }*/
 
     private void executeQuery(String query) throws SQLException, ClassNotFoundException {
         Connection connection = getMyConnexion();

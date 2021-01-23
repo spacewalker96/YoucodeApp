@@ -230,7 +230,7 @@
                                         <TextField fx:id="tfFirstNameSecretaire" />
                                         <TextField fx:id="tfLastNameSecretaire" layoutX="10.0" layoutY="10.0" />
                                         <TextField fx:id="tfEmailSecretaire" layoutX="10.0" layoutY="85.0" />
-                                        <Button fx:id="btnInsertSecretaire" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" text="Insert">
+                                        <Button fx:id="btnInsertSecretaire" mnemonicParsing="false" prefHeight="44.0" onAction="#saveSecraitaire" prefWidth="130.0" text="Insert">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
@@ -247,11 +247,11 @@
 
                                     </columns>
                                 </TableView>
-                                <Button fx:id="btnUpdateSecretaire" layoutX="108.0" layoutY="350.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0"  text="Update">
+                                <Button fx:id="btnUpdateSecretaire" layoutX="108.0" layoutY="350.0" mnemonicParsing="false" onAction="#UpdateSecraitaire" prefHeight="44.0" prefWidth="132.0"  text="Update">
                                     <font>
                                         <Font size="20.0" />
                                     </font></Button>
-                                <Button fx:id="btnDeleteSecretaire" layoutX="108.0" layoutY="435.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0"  text="Delete">
+                                <Button fx:id="btnDeleteSecretaire" layoutX="108.0" layoutY="435.0" mnemonicParsing="false" onAction="#DeleteSecretaire" prefHeight="44.0" prefWidth="132.0"  text="Delete">
                                     <font>
                                         <Font size="20.0" />
                                     </font></Button>

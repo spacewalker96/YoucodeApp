@@ -9,7 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.DAOAdmin.DAO;
 import org.example.DAOAdmin.DaoFormateur;
+import org.example.DAOAdmin.DaoSecretaire;
 import org.example.modele.Formateur;
+import org.example.modele.Secretaire;
 import org.example.modele.Student;
 import org.example.DAOAdmin.StudentDao;
 
@@ -284,7 +286,72 @@ public class InterfaceAdminController {
 
 
 
+/////////////////////////// secretaire ///////////
+@FXML
+public void saveSecraitaire() throws SQLException, ClassNotFoundException {
+  btnInsertSecretaire.setOnAction(e1-> {
 
+
+    Secretaire secretaire = new Secretaire();
+    DAO daoSecretaire = new DaoSecretaire();
+
+    try {
+      daoSecretaire.save(tfFirstNameSecretaire.getText(),tfLastNameSecretaire.getText(), tfEmailSecretaire.getText());
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+
+
+  });
+
+
+}
+
+
+  @FXML
+  public void UpdateSecraitaire() throws SQLException, ClassNotFoundException {
+    btnUpdateSecretaire.setOnAction(e1-> {
+      Secretaire secretaire = new Secretaire();
+      DAO daoSecretaire = new DaoSecretaire();
+
+      try {
+        daoSecretaire.update(tfFirstNameSecretaire.getText(), tfLastNameSecretaire.getText(), tfEmailSecretaire.getText(), Integer.parseInt(tfIDSecretaire.getText()));
+
+      } catch (NumberFormatException e) {
+        e.printStackTrace();
+      }
+
+    });
+  }
+
+
+  @FXML
+  public void DeleteSecretaire() throws SQLException, ClassCastException{
+    btnDeleteSecretaire.setOnAction(e1->{
+
+
+      Secretaire secretaire = new Secretaire();
+      DAO daoSecretaire = new DaoSecretaire();
+
+              try {
+                daoSecretaire.delete(Integer.parseInt(tfIDSecretaire.getText()));
+
+
+              } catch (NumberFormatException e) {
+                e.printStackTrace();
+              }
+            }
+
+    );
+
+
+
+
+
+
+  }
 
 
 

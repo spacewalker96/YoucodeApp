@@ -2,7 +2,7 @@ package org.example.modele;
 
 public class Secretaire {
 
-    private static Long secretaire_id;
+    private static int secretaire_id;
     private static String secretaire_firstname;
     private static String secretaire_lastname;
     private static String secretaire_email;
@@ -15,7 +15,12 @@ public class Secretaire {
     }
 
 
-    public static Long getSecretaire_id() {
+    public Secretaire(int sectretaire_id, String secretaire_firstname, String secretaire_lastname, String secretaire_email) {
+
+    }
+
+
+    public static int getSecretaire_id() {
         return secretaire_id;
     }
 
