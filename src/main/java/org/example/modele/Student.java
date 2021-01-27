@@ -1,108 +1,114 @@
 package org.example.modele;
 
 public class Student {
-    private static Long id;
-    private static String first_name;
-    private static String last_name;
-    private static String speciality;
-    private static String email;
-    private  static  String password;
-    private static String annesScolaire;
-    private  static  int presence;
-    private static  int absence;
-    private static String role;
+    private static int student_id;
+    private static String student_firstname;
+    private static String student_lastname;
+    private static String student_email;
+    private static String student_password;
+    private static String student_annescolaire;
+    private static int id_role;
+    private static int id_specialite;
+    private static int student_presence;
+    private static int student_absence;
+
     //Constructor
     public Student() {
+        super();
     }
-    public Student(Long id,String first_name,String last_name,String email,String password,String speciality,String annesScolaire,String role){
-        this.id=id;
-        this.first_name=first_name;
-        this.last_name=last_name;
-        this.email=email;
-        this.password=password;
-        this.speciality=speciality;
-        this.annesScolaire=annesScolaire;
-        this.role=role;
+
+    public Student(int student_id, String student_firstname, String student_lastname, String student_email, String student_password, String student_annescolaire, int id_role, int id_specialite, int student_presence, int student_absence) {
+        this.student_id = student_id;
+        this.student_firstname = student_firstname;
+        this.student_lastname = student_lastname;
+        this.student_email = student_email;
+        this.student_password = student_password;
+        this.student_annescolaire = student_annescolaire;
+        this.id_role = id_role;
+        this.id_specialite = id_specialite;
+        this.student_presence = student_presence;
+        this.student_absence = student_absence;
     }
 
     //Getters && Setters
-    public static Long getId() {
-        return id;
+
+    public static int getStudent_id() {
+        return student_id;
     }
 
-    public static void setId(Long id) {
-        Student.id = id;
+    public static String getStudent_firstname() {
+        return student_firstname;
     }
 
-    public static String getFirst_name() {
-        return first_name;
+    public static String getStudent_lastname() {
+        return student_lastname;
     }
 
-    public static void setFirst_name(String first_name) {
-        Student.first_name = first_name;
+    public static String getStudent_email() {
+        return student_email;
     }
 
-    public static String getLast_name() {
-        return last_name;
+    public static String getStudent_password() {
+        return student_password;
     }
 
-    public static void setLast_name(String last_name) {
-        Student.last_name = last_name;
+    public static String getStudent_annescolaire() {
+        return student_annescolaire;
     }
 
-    public static String getSpeciality() {
-        return speciality;
+    public static int getId_role() {
+        return id_role;
     }
 
-    public static void setSpeciality(String speciality) {
-        Student.speciality = speciality;
+    public static int getId_specialite() {
+        return id_specialite;
     }
 
-    public static String getEmail() {
-        return email;
+    public static int getStudent_presence() {
+        return student_presence;
     }
 
-    public static void setEmail(String email) {
-        Student.email = email;
+    public static int getStudent_absence() {
+        return student_absence;
     }
 
-    public static String getPassword() {
-        return password;
+    public static void setStudent_id(int student_id) {
+        Student.student_id = student_id;
     }
 
-    public static void setPassword(String password) {
-        Student.password = password;
+    public static void setStudent_firstname(String student_firstname) {
+        Student.student_firstname = student_firstname;
     }
 
-    public static String getAnnesScolaire() {
-        return annesScolaire;
+    public static void setStudent_lastname(String student_lastname) {
+        Student.student_lastname = student_lastname;
     }
 
-    public static void setAnnesScolaire(String annesScolaire) {
-        Student.annesScolaire = annesScolaire;
+    public static void setStudent_email(String student_email) {
+        Student.student_email = student_email;
     }
 
-    public static int getPresence() {
-        return presence;
+    public static void setStudent_password(String student_password) {
+        Student.student_password = student_password;
     }
 
-    public static void setPresence(int presence) {
-        Student.presence = presence;
+    public static void setStudent_annescolaire(String student_annescolaire) {
+        Student.student_annescolaire = student_annescolaire;
     }
 
-    public static int getAbsence() {
-        return absence;
+    public static void setId_role(int id_role) {
+        Student.id_role = id_role;
     }
 
-    public static void setAbsence(int absence) {
-        Student.absence = absence;
+    public static void setId_specialite(int id_specialite) {
+        Student.id_specialite = id_specialite;
     }
 
-    public static String getRole() {
-        return role;
+    public static void setStudent_presence(int student_presence) {
+        Student.student_presence = student_presence;
     }
 
-    public static void setRole(String role) {
-        Student.role = role;
+    public static void setStudent_absence(int student_absence) {
+        Student.student_absence = student_absence;
     }
 }
