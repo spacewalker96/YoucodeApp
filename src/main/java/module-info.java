@@ -1,12 +1,11 @@
-module org.example {
+module ma.youcode.gestiona {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires javafx.graphics;
 
-    opens org.example to javafx.fxml;
-    exports org.example;
+    opens ma.youcode.gestiona to javafx.fxml;
+    exports ma.youcode.gestiona;
 
-    opens org.example.modele;
-    exports org.example.modele;
+    opens ma.youcode.gestiona.Modeles;
+    exports ma.youcode.gestiona.Modeles;
 }
