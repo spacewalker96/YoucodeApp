@@ -3,14 +3,18 @@ package org.example.DAOAdmin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.modele.Formateur;
+import org.example.modele.Student;
+import org.example.utilities.DBconnection;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.example.utilities.DBconnection.getMyConnexion;
 
-public class DaoFormateur implements DAO<Formateur>{
+public class DaoFormateur implements DAO<Formateur> {
+    Statement statement = null;
 
     @Override
     public Optional<Formateur> get(long id) {
@@ -19,15 +23,47 @@ public class DaoFormateur implements DAO<Formateur>{
 
     @Override
     public List<Formateur> getAll() throws SQLException, ClassNotFoundException {
+        List<Formateur> formateurs = new ArrayList<Formateur>();
 
 
-        ObservableList<Formateur> formateurlist = FXCollections.observableArrayList();
-        Connection connection = getMyConnexion();
-        String query = "SELECT * FROM formateur";
-        Statement statement;
-        ResultSet rs;
+        statement = DBconnection.getMyConnexion().createStatement();
+        ResultSet resultat;
+        String requete = "Select * From formateur";
+        resultat = statement.executeQuery(requete);
+        while (resultat.next()) {
+            int id = resultat.getInt("formateur_id");
+            String nom = resultat.getString("formateur_firstname");
+            String prenom = resultat.getString("formateur_lastname");
+            String email = resultat.getString("formateur_email");
 
-        try{
+
+
+        // Cr�er l'objet Student
+
+
+        Formateur p = new Formateur(id, nom, prenom, email);
+
+        formateurs.add(p);
+    }
+        for(Formateur formateur : formateurs){
+            System.out.println(formateur);
+            System.out.println("id = " + formateur.getId());
+            System.out.println("Name = "+ formateur.getFormateur_firstname());
+            System.out.println("Bien");
+
+        }
+
+        return formateurs;
+
+}
+
+     //   ObservableList<Formateur> formateurlist = FXCollections.observableArrayList();
+     //   Connection connection = getMyConnexion();
+       // String query = "SELECT * FROM formateur";
+      //  Statement statement;
+       // ResultSet rs;
+
+      /*  try{
             statement = connection.createStatement();
             rs = statement.executeQuery(query);
             Formateur formateur;
@@ -43,7 +79,10 @@ public class DaoFormateur implements DAO<Formateur>{
         }catch(Exception ex){
             ex.printStackTrace();
         }
-        return formateurlist;    }
+        return formateurlist;
+        */
+       // }
+
 
 
 

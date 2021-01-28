@@ -2,45 +2,70 @@ package org.example.modele;
 
 public class Secretaire {
 
-    private static int secretaire_id;
-    private static String secretaire_firstname;
-    private static String secretaire_lastname;
-    private static String secretaire_email;
-    private static String password;
-    private static String role_id;
+    private  int secretaire_id;
+    private  String secretaire_firstname;
+    private  String secretaire_lastname;
+    private  String secretaire_email;
+    private  String password;
+    private  String role_id;
 
 
     public Secretaire() {
 
     }
 
+    //Constructor
 
-    public Secretaire(int sectretaire_id, String secretaire_firstname, String secretaire_lastname, String secretaire_email) {
+
+    public Secretaire(int id, String nom, String prenom, String email) {
+
+        this.secretaire_id=id;
+        this.secretaire_firstname=nom;
+        this.secretaire_lastname=prenom;
+        this.secretaire_email=email;
+
 
     }
 
 
-    public static int getSecretaire_id() {
+    public int getSecretaire_id() {
         return secretaire_id;
     }
 
-    public static String getSecretaire_firstname() {
+    public  String getSecretaire_firstname() {
         return secretaire_firstname;
     }
 
-    public static String getSecretaire_lastname() {
+    public  String getSecretaire_lastname() {
         return secretaire_lastname;
     }
 
-    public static String getSecretaire_email() {
+    public  String getSecretaire_email() {
         return secretaire_email;
     }
 
-    public static String getPassword() {
+    public  String getPassword() {
         return password;
     }
 
-    public static String getRole_id() {
+    public  String getRole_id() {
         return role_id;
     }
+
+    public void setSecretaire_id(int secretaire_id) {
+        this.secretaire_id = secretaire_id;
+    }
+
+    public void setSecretaire_firstname(String secretaire_firstname) {
+        this.secretaire_firstname = secretaire_firstname;
+    }
+
+    public void setSecretaire_lastname(String secretaire_lastname) {
+        this.secretaire_lastname = secretaire_lastname;
+    }
+
+    public void setSecretaire_email(String secretaire_email) {
+        this.secretaire_email = secretaire_email;
+    }
 }
+

@@ -58,6 +58,7 @@ public class LoginController {
             infoBox("Please enter correct Email and Password", null, "Failed");
         } else if (flag=true){
             //infoBox("Login Successful!", null, "Failed");
+
             App.setRoot("interfaceAdmin");
 
 

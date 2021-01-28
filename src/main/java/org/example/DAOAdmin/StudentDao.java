@@ -3,8 +3,10 @@ package org.example.DAOAdmin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.modele.Student;
+import org.example.utilities.DBconnection;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,45 +15,54 @@ import static org.example.utilities.DBconnection.getMyConnexion;
 
 
 public class StudentDao implements DAO<Student> {
-
+    Statement statement = null;
     @Override
     public Optional<Student> get(long id) {
         return Optional.empty();
     }
 
     @Override
-    public List<Student> getAll() throws SQLException, ClassNotFoundException {
-
-            ObservableList<Student> etudiantsList = FXCollections.observableArrayList();
-            Connection connection = getMyConnexion();
-            String query = "SELECT * FROM student";
-            Statement statement;
-            ResultSet rs;
-
-            try{
-                statement = connection.createStatement();
-                rs = statement.executeQuery(query);
-                Student student;
-                while(rs.next()){
-
-                    student = new Student(rs.getInt("student_id"),
-                            rs.getString("student_firstname"),
-                            rs.getString("student_lastname"),
-                            rs.getString("student_email"));
-                    etudiantsList.add(student);
-                }
-
-            }catch(Exception ex){
-                ex.printStackTrace();
-            }
-            return etudiantsList;    }
+    public  List<Student> getAll() throws SQLException, ClassNotFoundException {
+        List<Student> students = new ArrayList<Student>();
 
 
+        statement = DBconnection.getMyConnexion().createStatement();
+      //  System.out.println("création de l'objet Statement");
 
+        //4- s�lectionner la table student
+        ResultSet resultat;
+        String requete = "Select * From student";
 
+        resultat = statement.executeQuery(requete);
+
+        while (resultat.next()) {
+            int id = resultat.getInt("student_id");
+            String nom = resultat.getString("student_firstname");
+            String prenom = resultat.getString("student_lastname");
+            String email = resultat.getString("student_email");
+
+            // Cr�er l'objet Student
+            Student p = new Student(id,nom,prenom,email);
+          //  p.setId(id);
+           // p.setLast_name(nom);
+           // p.setFirst_name(prenom);
+           // p.setEmail(email);
+            students.add(p);
+        }
+        for (Student student : students) {
+        //   System.out.println("===============================");
+         //   System.out.println("id = " + student.getId());
+         //   System.out.println("Name = "+ student.getFirst_name());
+         //   System.out.println("Bien");
+        //   System.out.println("===============================");
+        }
+
+        return students;
+    }
 
     @Override
-    public void save(String nom, String prenom, String mail) throws SQLException, ClassNotFoundException {
+    public void save(String nom, String prenom, String mail)  throws SQLException, ClassNotFoundException {
+
 
         try {
 

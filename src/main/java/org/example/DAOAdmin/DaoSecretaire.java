@@ -3,14 +3,20 @@ package org.example.DAOAdmin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.modele.Secretaire;
+import org.example.modele.Student;
+import org.example.utilities.DBconnection;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.example.utilities.DBconnection.getMyConnexion;
 
 public class DaoSecretaire  implements DAO<Secretaire>{
+
+    Statement statement = null;
+
     @Override
     public Optional<Secretaire> get(long id) {
         return Optional.empty();
@@ -19,31 +25,53 @@ public class DaoSecretaire  implements DAO<Secretaire>{
     @Override
     public List<Secretaire> getAll() throws SQLException, ClassNotFoundException {
 
-        ObservableList<Secretaire> secretaireslist = FXCollections.observableArrayList();
-        Connection connection = getMyConnexion();
-        String query = "SELECT * FROM sectretaire";
-        Statement statement;
-        ResultSet rs;
+        List<Secretaire> secretaires = new ArrayList<Secretaire>();
 
-        try{
-            statement = connection.createStatement();
-            rs = statement.executeQuery(query);
-            Secretaire secretaire;
-            while(rs.next()){
 
-                secretaire = new Secretaire(rs.getInt("sectretaire_id"),
-                        rs.getString("secretaire_firstname"),
-                        rs.getString("secretaire_lastname"),
-                        rs.getString("secretaire_email"));
-                secretaireslist.add(secretaire);
-            }
+    statement = DBconnection.getMyConnexion().createStatement();
+        System.out.println("création de l'objet Statement secrt");
 
-        }catch(Exception ex){
-            ex.printStackTrace();
+    //- s�lectionner la table secretaire
+         ResultSet resultat;
+          String requete = "Select * From sectretaire";
+
+         resultat = statement.executeQuery(requete);
+
+        while (resultat.next()) {
+        int id = resultat.getInt("sectretaire_id");
+        String nom = resultat.getString("secretaire_firstname");
+        String prenom = resultat.getString("secretaire_lastname");
+        String email = resultat.getString("secretaire_email");
+            System.out.println(prenom);
+
+        // Cr�er l'objet secretaire
+            Secretaire p = new Secretaire(id,nom,prenom,email);
+
+            secretaires.add(p);
+
         }
-        return secretaireslist;
+        for (Secretaire secretaire : secretaires) {
+        System.out.println("===============================");
+        System.out.println("id = " + secretaire.getSecretaire_id());
+        System.out.println("Name = "+ secretaire.getSecretaire_firstname());
+        System.out.println("Bien");
+        System.out.println("===============================");
+
 
     }
+
+        return secretaires;
+}
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void save(String nom, String prenom, String mail) throws SQLException, ClassNotFoundException {

@@ -1,25 +1,33 @@
 package org.example.modele;
 
 public class Student {
-    private static int id;
-    private static String first_name;
-    private static String last_name;
-    private static String speciality;
-    private static String email;
-    private  static  String password;
-    private static String annesScolaire;
-    private  static  int presence;
-    private static  int absence;
-    private static String role;
+    private int id;
+    private String first_name;
+    private String last_name;
+    private String speciality;
+    private String email;
+    private  String password;
+    private String annesScolaire;
+    private  int presence;
+    private int absence;
+    private String role;
 
     //Constructor
     public Student() {
 
     }
     //Constructor
-    public Student(int colId, String colFirtsName, String colLastName, String colEmail) {
-
+    public Student(int id, String nom, String prenom, String email) {
+        super();
+        this.id = id;
+        this.first_name = nom;
+        this.last_name = prenom;
+        this.email = email;
     }
+
+
+
+
     public Student(int id,String first_name,String last_name,String email,String password,String speciality,String annesScolaire,String role){
         this.id=id;
         this.first_name=first_name;
@@ -32,87 +40,87 @@ public class Student {
     }
 
     //Getters && Setters
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
-    public static void setId(int id) {
+    public void setId(int id) {
 
-        Student.id = id;
+       this.id = id;
     }
 
-    public static String getFirst_name() {
+    public String getFirst_name() {
 
         return first_name;
     }
 
-    public static void setFirst_name(String first_name) {
+    public void setFirst_name(String first_name) {
 
-        Student.first_name = first_name;
+        this.first_name = first_name;
     }
 
-    public static String getLast_name() {
+    public String getLast_name() {
 
         return last_name;
     }
 
-    public static void setLast_name(String last_name) {
-        Student.last_name = last_name;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public static String getSpeciality() {
+    public String getSpeciality() {
         return speciality;
     }
 
-    public static void setSpeciality(String speciality) {
-        Student.speciality = speciality;
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public static void setEmail(String email) {
-        Student.email = email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public static String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public static void setPassword(String password) {
-        Student.password = password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public static String getAnnesScolaire() {
+    public String getAnnesScolaire() {
         return annesScolaire;
     }
 
-    public static void setAnnesScolaire(String annesScolaire) {
-        Student.annesScolaire = annesScolaire;
+    public void setAnnesScolaire(String annesScolaire) {
+        this.annesScolaire = annesScolaire;
     }
 
-    public static int getPresence() {
+    public int getPresence() {
         return presence;
     }
 
-    public static void setPresence(int presence) {
-        Student.presence = presence;
+    public void setPresence(int presence) {
+        this.presence = presence;
     }
 
-    public static int getAbsence() {
+    public int getAbsence() {
         return absence;
     }
 
-    public static void setAbsence(int absence) {
-        Student.absence = absence;
+    public void setAbsence(int absence) {
+        this.absence = absence;
     }
 
-    public static String getRole() {
+    public String getRole() {
         return role;
     }
 
-    public static void setRole(String role) {
-        Student.role = role;
+    public void setRole(String role) {
+        this.role = role;
     }
 }
