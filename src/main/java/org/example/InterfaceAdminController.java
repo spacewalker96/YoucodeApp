@@ -157,9 +157,9 @@ public class InterfaceAdminController implements Initializable {
          //Student student = new Student(0, tfFirstName.getText(), tfLastName.getText(), tfEmail.getText());
          System.out.println(tfFirstName.getText());
 
+         viewData();
 
        });
-      viewData();
 
 
 
@@ -183,9 +183,11 @@ public class InterfaceAdminController implements Initializable {
               }
 
       System.out.println(tfID.getText());
+      viewData();
 
     });
-    viewData();
+
+
 
 
   }
@@ -203,11 +205,10 @@ public class InterfaceAdminController implements Initializable {
         } catch (NumberFormatException e) {
           e.printStackTrace();
         }
-              }
+                viewData();
 
-              );
+              });
 
-    viewData();
 
 
 
@@ -270,10 +271,10 @@ public class InterfaceAdminController implements Initializable {
       }
       System.out.println(tfFirstName.getText());
 
+      viewDataFormateur();
 
     });
 
-    viewDataFormateur();
 
   }
 
@@ -289,9 +290,10 @@ public class InterfaceAdminController implements Initializable {
       } catch (NumberFormatException e) {
         e.printStackTrace();
       }
+      viewDataFormateur();
 
     });
-    viewDataFormateur();
+
 
 
   }
@@ -313,13 +315,15 @@ public class InterfaceAdminController implements Initializable {
               } catch (NumberFormatException e) {
                 e.printStackTrace();
               }
+              viewDataFormateur();
+
+
             }
 
     );
 
 
 
-    viewDataFormateur();
 
 
 
@@ -420,9 +424,9 @@ public void saveSecraitaire( ) throws SQLException, ClassNotFoundException {
       e.printStackTrace();
     }
 
+    viewDataSecretaire();
 
   });
-  viewDataSecretaire();
 
 
 }
@@ -441,8 +445,9 @@ public void saveSecraitaire( ) throws SQLException, ClassNotFoundException {
         e.printStackTrace();
       }
 
+      viewDataSecretaire();
+
     });
-    viewDataSecretaire();
 
   }
 
@@ -462,13 +467,12 @@ public void saveSecraitaire( ) throws SQLException, ClassNotFoundException {
               } catch (NumberFormatException e) {
                 e.printStackTrace();
               }
-            }
+              viewDataSecretaire();
 
-    );
+            });
 
 
 
-    viewDataSecretaire();
 
 
   }
@@ -507,6 +511,7 @@ public void saveSecraitaire( ) throws SQLException, ClassNotFoundException {
     }
 
     tvSecretaire.setItems(finalData);
+
 
   }
 
