@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #C0C0C0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FormateurController">
+   <children>
+      <AnchorPane prefHeight="77.0" prefWidth="800.0" style="-fx-background-color: #0000FF;">
+         <children>
+            <ImageView fitHeight="44.0" fitWidth="200.0" layoutX="318.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="100.0" opacity="0.75" prefHeight="77.0" prefWidth="200.0" style="-fx-background-color: #0000FF;">
+         <children>
+            <Label layoutX="21.0" layoutY="14.0" text="Etudiant " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="41.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="345.0" layoutY="121.0" prefHeight="92.0" prefWidth="426.0" style="-fx-background-color: #0000FF#0000FF;">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="34.0" prefHeight="44.0" prefWidth="125.0" text="Absence justifier" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="34.0" prefHeight="44.0" prefWidth="125.0" text="absence non jst" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" layoutY="34.0" prefHeight="44.0" prefWidth="87.0" text="Taux" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="345.0" layoutY="213.0" opacity="0.53" prefHeight="111.0" prefWidth="426.0" style="-fx-background-color: #0000FF;" />
+      <AnchorPane layoutY="472.0" prefHeight="27.0" prefWidth="800.0" style="-fx-background-color: #0000FF;" />
+      <Label layoutX="26.0" layoutY="192.0" prefHeight="37.0" prefWidth="87.0" text="Nom :" />
+      <Label layoutX="26.0" layoutY="237.0" prefHeight="37.0" prefWidth="87.0" text="Prenom :" />
+      <Label layoutX="26.0" layoutY="292.0" prefHeight="37.0" prefWidth="87.0" text="Promotion :" />
+      <Label layoutX="26.0" layoutY="338.0" prefHeight="37.0" prefWidth="87.0" text="Specialite :" />
+      <Label layoutX="26.0" layoutY="393.0" prefHeight="37.0" prefWidth="87.0" text="Nom :" />
+      <Label layoutX="152.0" layoutY="191.0" prefHeight="37.0" prefWidth="87.0" />
+      <Label layoutX="152.0" layoutY="236.0" prefHeight="37.0" prefWidth="87.0" />
+      <Label layoutX="152.0" layoutY="291.0" prefHeight="37.0" prefWidth="87.0" />
+      <Label layoutX="152.0" layoutY="337.0" prefHeight="37.0" prefWidth="87.0" />
+      <Label layoutX="152.0" layoutY="392.0" prefHeight="37.0" prefWidth="87.0" />
+   </children>
+</AnchorPane>

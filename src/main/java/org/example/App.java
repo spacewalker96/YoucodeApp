@@ -17,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("student"), 800, 500);
+        scene = new Scene(loadFXML("adminformateur"), 800, 500);
         stage.setScene(scene);
         stage.setTitle("Youcode Attendence");
         stage.show();
@@ -28,7 +28,7 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + "login"));
         return fxmlLoader.load();
     }
 
