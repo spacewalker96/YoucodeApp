@@ -249,9 +249,21 @@ public class InterfaceAdminController implements Initializable {
 
   }
 
+  int index =-1;
 
+  @FXML
+  public void getSelected(MouseEvent MouseEvent ) {
 
+    index = tvEtudiant.getSelectionModel().getSelectedIndex();
+    if (index <= -1) {
 
+    return;
+    }
+    tfID.setText(colId.getCellData(index).toString());
+    tfFirstName.setText(colFirtsName.getCellData(index).toString());
+    tfLastName.setText(colLastName.getCellData(index).toString());
+    tfEmail.setText(colEmail.getCellData(index).toString());
+  }
 
 
 
@@ -328,6 +340,8 @@ public class InterfaceAdminController implements Initializable {
 
 
   }
+
+
 
 
 

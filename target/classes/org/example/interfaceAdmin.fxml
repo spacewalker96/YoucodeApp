@@ -54,7 +54,7 @@
 
                                     </children>
                                 </VBox>
-                                <TableView fx:id="tvEtudiant" layoutX="353.0" layoutY="99.0" prefHeight="329.0" prefWidth="329.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="353.0" AnchorPane.rightAnchor="264.0" AnchorPane.topAnchor="99.0">
+                                <TableView fx:id="tvEtudiant" layoutX="353.0" layoutY="99.0" prefHeight="329.0" prefWidth="329.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="353.0" AnchorPane.rightAnchor="264.0" AnchorPane.topAnchor="99.0" onMouseClicked="#getSelected">
                                     <columns>
                                         <TableColumn fx:id="colId" prefWidth="61.20001220703125" text="Id" />
                                         <TableColumn fx:id="colFirtsName" prefWidth="84.20001220703125" text="first Name" />
