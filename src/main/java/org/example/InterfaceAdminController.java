@@ -347,10 +347,7 @@ public class InterfaceAdminController implements Initializable {
 
   @FXML
   public void viewDataFormateur() {
-  //  ObservableList<Formateur> data1 = null;
-  //  data1 = FXCollections.observableArrayList();
-    // ObservableList<Formateur> finalData = data1;
-   // ObservableList<Formateur> finalData = null;
+
 
     ObservableList<Formateur> data1 = null;
     data1 = FXCollections.observableArrayList();
@@ -380,9 +377,20 @@ public class InterfaceAdminController implements Initializable {
       }
       tvFormateur.setItems(finalData1);
 
+  }
 
+  @FXML
+  public void getSelectedFormateur(MouseEvent MouseEvent ) {
 
+    index = tvFormateur.getSelectionModel().getSelectedIndex();
+    if (index <= -1) {
 
+      return;
+    }
+    tfIDFormateur.setText(colIdFormateur.getCellData(index).toString());
+    tfFirstNameFormateur.setText(colFirtsNameFormateur.getCellData(index).toString());
+    tfLastNameFormateur.setText(colLastNameFormateur.getCellData(index).toString());
+    tfEmailFormateur.setText(colEmailFormateur.getCellData(index).toString());
 
   }
 
@@ -530,9 +538,18 @@ public void saveSecraitaire( ) throws SQLException, ClassNotFoundException {
   }
 
 
+  @FXML
+  public void getSelectedSecretaire(MouseEvent mouseEvent){
+    index = tvSecretaire.getSelectionModel().getSelectedIndex();
+    if (index <= -1){
+      return;
+    }
+    tfIDSecretaire.setText(colIdSecretaire.getCellData(index).toString());
+    tfFirstNameSecretaire.setText(colFirtsNameSecretaire.getCellData(index).toString());
+    tfLastNameSecretaire.setText(colLastNameSecretaire.getCellData(index).toString());
+    tfEmailSecretaire.setText(colEmailSecretaire.getCellData(index).toString());
 
-
-
+  }
 
 
 
@@ -543,11 +560,7 @@ public void saveSecraitaire( ) throws SQLException, ClassNotFoundException {
     viewDataSecretaire();
   }
 
- //// onMouseClicked="#etudiant"
- // public void etudiant(MouseEvent mouseEvent) {
 
-
- // }
 
 }
 
