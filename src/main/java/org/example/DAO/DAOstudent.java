@@ -5,6 +5,7 @@ import org.example.modele.Student;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public interface DAOstudent {
     public List<Student> getAll() throws ClassNotFoundException, SQLException;

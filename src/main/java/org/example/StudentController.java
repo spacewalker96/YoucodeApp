@@ -74,7 +74,7 @@ public class StudentController implements Initializable {
             if(rs.next()){
                 absence_Just.setText(rs.getString("absence_justifier"));
                 absence_non_Just.setText(rs.getString("absence_non_justifier"));
-                taux.setText(String.valueOf(Float.parseFloat(rs.getString("taux"))));
+                taux.setText(String.valueOf(Integer.parseInt(rs.getString("taux"))));
 
             }else{
                 System.out.println("Nothing to show");
